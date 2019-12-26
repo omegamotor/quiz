@@ -1,20 +1,10 @@
-body{background-color:gray;}
+#Logo{
+color:#939C9F;}
 
-.content{
+body{
+padding-bottom: 70px;
+}
 
-    background-color:#D7D7D7;
-    height: 825px;}
-
-#menu{
-
-    font-size:18px;
-    height: 75px;}
-
-#Logo{line-height:55px;}
-
-
-.colA{
-
-    border:1px solid black;
-
+.container-fluid{
+padding:0;
 }
