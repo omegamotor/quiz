@@ -27,8 +27,10 @@ def profile(request):
 
     return render(request, "profile.html", context)
 
+
 def login(request):
     return render(request, template_name="login.html")
+
 
 def register(request):
     if request.method == 'POST':

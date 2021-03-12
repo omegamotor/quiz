@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.models import User
 
+
 def home(request):
 
     post_nr = Post.objects.all()[::-1][0].id
@@ -28,7 +29,6 @@ def home(request):
 
 def quiz(request):
     return render(request, template_name="quiz.html")
-
 
 
 class PostListView(ListView):
@@ -51,7 +51,6 @@ class UserListView(ListView):
         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
-
 class PostDetailView(LoginRequiredMixin,DetailView):
     extra_context = {
         'pytania':Question.objects.all()
@@ -59,12 +58,12 @@ class PostDetailView(LoginRequiredMixin,DetailView):
     model = Post
 
 
-
 class CategoryDetailView(DetailView):
     extra_context = {
         'quizy':Post.objects.all()
     }
     model = Category
+
 
 class PostCreateView(LoginRequiredMixin,CreateView):
 
@@ -74,6 +73,7 @@ class PostCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 class QuestionCreateView(LoginRequiredMixin,CreateView):
 
@@ -88,17 +88,15 @@ class QuestionCreateView(LoginRequiredMixin,CreateView):
         return super().form_valid(form)
 
 
-
 class QuziQuestionCreate(LoginRequiredMixin,CreateView):
     model = Post_Question
-
-
 
 
 @login_required
 def add_quiz(request):
 
     return render(request,"add-quiz.html")
+
 
 def ranking(request):
 
@@ -108,10 +106,9 @@ def ranking(request):
 
     return render(request, "ranking.html", context)
 
+
 def category(request):
     context = {
         'kategorie': Category.objects.all()}
-
-
     return render(request, 'category.html', context)
 

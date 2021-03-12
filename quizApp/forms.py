@@ -7,6 +7,7 @@ class QuizCreateForm():
         model = Post
         fields = ['title', 'description', 'category']
 
+
 class QuestionCreateForm():
     class Meta:
         model = Question

@@ -10,12 +10,14 @@ from django.views.generic import CreateView
 
 from django.urls import reverse
 
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(default='default.png', upload_to='category_img')
 
     def __str__(self):
         return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
@@ -24,18 +26,11 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('question-create')
-
-
-
-
-
-
 
 
 class Question(models.Model):
