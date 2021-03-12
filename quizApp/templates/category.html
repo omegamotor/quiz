@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div id="quiz-nr" >{{ last_post }}</div>
+
+{% for i in full_deck %}
+<h2> cały deck</h2>
+{% endfor %}
+
+{% if el_last_deck == 1 %}
+<h2>Otwórz dodaj el i zamknij</h2>
+{% elif el_last_deck == 2 %}
+<h2>Otwórz dodaj 2 el i zamknij</h2>
+{% endif %}
+
+
+<div class="card m-3">
+    <div class="card-body">
+        <div class="kategoria"><h1 class="nagłówek">Kategorie</h1></div>
+    </div>
+</div>
+
+
+
+<div class="card-deck">
+
+    <div class="row row-cols-md-3">
+
+    {% for kategoria in kategorie %}
+        <div class="col mb-4">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ kategoria.image.url }}" width="250" height="200" alt="Card image cap">
+        <h3>{{ post.category }}</h3>
+        <div class="card-body tyt">
+            <a href="{% url 'category-detail' kategoria.id %}"><h4>{{ kategoria.name }}</h4></a>
+        </div>
+    </div>
+        </div>
+    {% endfor %}
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,118 @@
+#Logo{
+    color:#939C9F;
+    }
+
+body{
+    padding-bottom: 70px;
+    background-image: url('../img/tlo.jpg');
+    counter-reset: my-sec-counter;
+    }
+
+.container-fluid{
+    padding:0;
+    }
+
+.kategoria{color:blue;
+}
+
+.tresc{
+    background-color: rgba(209,209,224,0.7);
+    height: 100%;
+    }
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+
+/* Do rankingu  */
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+#quiz-nr{
+   display:none;
+}
+
+.place-in-ranking::before{
+    counter-increment: my-sec-counter;
+    content: "Miejsce " counter(my-sec-counter);
+    line-height:50px;
+}
+
+
+.nagłówek{
+    color:black;
+    text-align: center;
+    font-size:50px;
+    font-family: "Lato", Times, serif;
+    }
+
+.tyt{
+
+    text-align: center;
+    border: black 1px solid;
+}
+
+a{
+
+    color: black;
+}
+
+
+.table{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    width: 50%;
+    }
+
+.column_size{
+   width:50%;
+}
+
+.razem{
+    line-height:50px;
+}
+
+.ranking-table{
+
+    padding-bottom:50px;
+}
+/*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+
+.category_img{
+    margin: 0 auto;
+
+}
+
+
+h5::before{
+    counter-increment: my-sec-counter;
+      content:counter(my-sec-counter) ". ";
+}
+
+
+.hidden{
+
+    display:none;
+    font-weight: bold;
+    color:green;
+
+}
+

@@ -1,0 +1,17 @@
+
+{% for pytanie in pytania %}
+    {% if pytanie.quiz == object %}
+
+        <div class="card-body">
+            <h5 class="card-title">{{ pytanie.title }}</h5>
+
+
+                a)  {{ pytanie.answerC }}
+                b)  {{ pytanie.correct_answer }}
+                c)  {{ pytanie.answerA }}
+                d)  {{ pytanie.answerB }}
+        </div>
+    {% endif %}
+{% endfor %}
+
+<button type="submit" class="btn btn-primary">Sprawdź</button>

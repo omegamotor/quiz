@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+<div class="kategoria"><h1>Najnowsze Quizy !</h1></div>
+
+<div class="list-group">
+    <div class="card mb-3">
+    <a href="{% url 'category' %}" class="list-group-item list-group-item-action active">Kategorie\{{object}}</a>
+    </div>
+    {% for quiz in quizy %}
+
+    {% if quiz.category == object %}
+    <div class="card mb-3">
+        <a href="{% url 'quiz-detail' quiz.id %}">
+            <div class="card-body">
+                <h5 class="card-title">{{quiz.title}}</h5>
+                <p class="card-text">{{quiz.description}}</p>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

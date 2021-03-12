@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Zarejstruj się !</h1>
+
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Dołącz teraz !</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Utwórz konto</button>
+        </div>
+    </form>
+
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Masz już konto ?
+            <a href="{% url 'login_profile' %}" class="ml-2">Zaloguj !</a>
+        </small>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Stwórz swój własny Quiz</h1>
+
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Stwórz swój własny Quiz</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" name="next" type="submit">Dodaj kolejne pytanie</button>
+            <a href="{% url 'quizApp-home' %}"><div class="btn btn-outline-info"  type="">Home</div></a>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
+

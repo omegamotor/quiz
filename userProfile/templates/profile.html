@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+   <div class="content-section">
+       <div class="media">
+           <img src="{{ user.profile.image.url }}" alt="" class="rounded-circle account-img">
+           <div class="media-body">
+               <h2 class="account-heading"> {{ user.username }} </h2>
+               <p class="text-secendary">{{ user.email }}</p>
+               <p class="text-secendary">Twoja liczba punktów to: {{ user.profile.punkty }}</p>
+           </div>
+
+       </div>
+
+        # multipart/form-data zapisuje w bazie danych
+       <form method="POST" enctype="multipart/form-data">
+           {% csrf_token %}
+           <fieldset class="form-group">
+               <legend class="border-bottom mb-4">Informacje</legend>
+               {{ u_form|crispy }}
+               {{ p_form|crispy }}
+
+           </fieldset>
+           <div class="form-group">
+               <button class="btn btn-outline-info" type="submit">Zaktualizuj</button>
+           </div>
+       </form>
+
+
+   </div>
+
+{% endblock content %}

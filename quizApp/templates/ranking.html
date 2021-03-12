@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="card m-3">
+    <div class="card-body">
+        <div class="kategoria"><h1 class="nagłówek">Ranking użytkowników</h1></div>
+    </div>
+</div>
+
+
+<div class="ranking-table">
+<table class="table table-dark ">
+    <thead>
+    <tr>
+        <th scope="col" class="column_size"></th>
+        <th scope="col" class="column_size">Użytkownik</th>
+        <th scope="col" class="column_size">Wynik</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    {% for name in names %}
+    <tr>
+        <th class="place-in-ranking" scope="row"></th>
+        <td><img src="{{ name.image.url }}" height="50px" width="50px" alt="" class="rounded-circle">
+            {% if name.user.username == user.username %}
+            <b>Ty</b>
+            {% else %}
+            {{name.user.username}}
+            {% endif %}
+        </td>
+        <td class="razem">{{ name.punkty }}</td>
+    </tr>
+
+
+    {% endfor %}
+
+    </tbody>
+</table>
+</div>
+{% endblock %}
+

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h2>Zostałeś Wylogowany !</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login_profile' %}" >Zaloguj ponownie</a>
+        </small>
+    </div>
+{% endblock %}
+
