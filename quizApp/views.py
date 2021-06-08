@@ -21,7 +21,6 @@ def home(request):
         'posts': Post.objects.all(),
         'full_deck':range(int(full_deck)),
         'el_last_deck':el_last_deck
-
     }
 
     return render(request, "home.html", context)
