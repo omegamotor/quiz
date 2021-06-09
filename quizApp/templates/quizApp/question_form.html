@@ -13,8 +13,10 @@
             {{ form|crispy }}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" name="next" type="submit">Dodaj kolejne pytanie</button>
-            <a href="{% url 'quizApp-home' %}"><div class="btn btn-outline-info"  type="">Home</div></a>
+
+            <button id="add-question" class="btn btn-outline-info" name="next" type="submit">Dodaj pytanie</button>
+            <a class="btn btn-outline-info" href="{% url 'quizApp-home' %}" >Strona główna</a>
+
         </div>
     </form>
 

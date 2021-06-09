@@ -6,8 +6,8 @@
        <div class="media">
            <img src="{{ user.profile.image.url }}" alt="" class="rounded-circle account-img">
            <div class="media-body">
-               <h2 class="account-heading"> {{ user.username }} </h2>
-               <p class="text-secendary">{{ user.email }}</p>
+               <h2 id="username" class="account-heading"> {{ user.username }} </h2>
+               <p id="email" class="text-secendary">{{ user.email }}</p>
                <p class="text-secendary">Twoja liczba punktów to: {{ user.profile.punkty }}</p>
            </div>
 
@@ -23,7 +23,7 @@
 
            </fieldset>
            <div class="form-group">
-               <button class="btn btn-outline-info" type="submit">Zaktualizuj</button>
+               <button id="profile-button" class="btn btn-outline-info" type="submit">Zaktualizuj</button>
            </div>
        </form>
 

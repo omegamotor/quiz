@@ -14,4 +14,10 @@ class QuestionCreateForm():
         fields = ['title', 'correct_answer', 'answerA', 'answerB', 'answerC', 'quiz']
 
 
+class QuizQuestionCreateForm():
+    class Meta:
+        model = Post_Question
+        fields = ['post', 'question']
+
+
 

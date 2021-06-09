@@ -15,7 +15,7 @@
 
     {% if quiz.category == object %}
     <div class="card mb-3">
-        <a href="{% url 'quiz-detail' quiz.id %}">
+        <a class="quiz_link" href="{% url 'quiz-detail' quiz.id %}">
             <div class="card-body">
                 <h5 class="card-title">{{quiz.title}}</h5>
                 <p class="card-text">{{quiz.description}}</p>

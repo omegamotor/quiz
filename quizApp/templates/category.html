@@ -34,7 +34,7 @@
         <img class="card-img-top" src="{{ kategoria.image.url }}" width="250" height="200" alt="Card image cap">
         <h3>{{ post.category }}</h3>
         <div class="card-body tyt">
-            <a href="{% url 'category-detail' kategoria.id %}"><h4>{{ kategoria.name }}</h4></a>
+            <h4><a href="{% url 'category-detail' kategoria.id %}">{{ kategoria.name }}</a></h4>
         </div>
     </div>
         </div>

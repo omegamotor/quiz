@@ -35,7 +35,6 @@ class Post(models.Model):
 
 class Question(models.Model):
     #Pytanie Dodać-
-
     title = models.CharField(max_length=100)
     correct_answer = models.CharField(max_length=100)
     answerA = models.CharField(max_length=100)
@@ -50,20 +49,8 @@ class Question(models.Model):
         return reverse('question-create')
 
     def answers(self):
-
         odpowiedzi = [self.answerA, self.answerB, self.answerC, self.correct_answer]
         random.shuffle(odpowiedzi)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -75,11 +62,8 @@ class Post_Question(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
 
-
     def __str__(self):
         return self.post.title
 
     def questions(self):
         return self.question
-
-
