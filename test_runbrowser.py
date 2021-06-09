@@ -287,7 +287,7 @@ class MyTestCase(unittest.TestCase):
         time.sleep(2)
 
         self.header_text = self.browser.find_element_by_id('email').text
-        self.assertIn(new_user[3], self.header_text)
+        self.assertIn(new_user[2], self.header_text)
 
     def test_user_rename(self):
         self.browser.get('http://localhost:8000/register/')
